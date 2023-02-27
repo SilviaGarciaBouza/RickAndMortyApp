@@ -1,12 +1,18 @@
 package com.example.rickandmorty
 
+import android.app.ProgressDialog.show
 import android.content.Context
+import android.graphics.BitmapFactory
+import android.os.AsyncTask
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
+
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.databinding.ListItemBinding
+import com.squareup.picasso.Picasso
 
 
 class RickAndMortyAdapter(val listItemsRickAndMorty: List<ItemRickAndMorty>): RecyclerView.Adapter<RickAndMortyAdapter.RickAndMortyHolder>() {
@@ -16,6 +22,8 @@ class RickAndMortyAdapter(val listItemsRickAndMorty: List<ItemRickAndMorty>): Re
 
         fun render(item: ItemRickAndMorty) {
             binding.tvNameRickAndMorty.text = item.name
+
+            Picasso.get().load(item.foto).into(binding.ivRickAndMorty)
 
         }
     }
@@ -33,6 +41,8 @@ class RickAndMortyAdapter(val listItemsRickAndMorty: List<ItemRickAndMorty>): Re
     }
 
 }
+
+
 
 
 
