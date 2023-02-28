@@ -1,6 +1,6 @@
 package com.example.rickandmorty
 
-
+/*
 val listItemsRickAndMorty: List<ItemRickAndMorty> = listOf(
     ItemRickAndMorty("https://rickandmortyapi.com/api/character/avatar/53.jpeg", "Blue Shirt Morty"),
     ItemRickAndMorty("https://rickandmortyapi.com/api/character/avatar/359.jpeg", "Morty torturado"),
@@ -9,3 +9,4 @@ val listItemsRickAndMorty: List<ItemRickAndMorty> = listOf(
     ItemRickAndMorty("https://rickandmortyapi.com/api/character/avatar/573.jpeg", "Serpiente Hitler"),
     ItemRickAndMorty("https://rickandmortyapi.com/api/character/avatar/603.jpeg", "Crossy")
 )
+*/
