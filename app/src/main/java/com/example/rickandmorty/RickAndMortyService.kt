@@ -30,11 +30,12 @@ class RickAndMortyService {
     //define cómo Retrofit se comunica con el servidor web mediante solicitudes HTTP.
     interface RickAndMortyApiService {
         @GET("character")
-        suspend fun getItems(): List<ItemRickAndMorty>
+        suspend fun getItems(): CharactersResponse
     }
 
 
 //objeto q vas a usar en otros archivos:
+//TODO
 val rickAndMortyService1 = RickAndMortyService().service
 
 

@@ -28,7 +28,7 @@ class RickAndMortyViewModel: ViewModel() {
             viewModelScope.launch {
                 _status.value = RickAndMortyStatus.LOADING
                 try {
-                    _characteres.value = rickAndMortyService1.getItems()
+                    _characteres.value = rickAndMortyService1.getItems().results
                     _status.value = RickAndMortyStatus.DONE
                     Log.d("vieModel","Número de valores: ${-characteres.value?.count()!!}")
                 } catch (e: Exception) {
@@ -37,7 +37,6 @@ class RickAndMortyViewModel: ViewModel() {
                 }
             }
         }
-
 
 }
 

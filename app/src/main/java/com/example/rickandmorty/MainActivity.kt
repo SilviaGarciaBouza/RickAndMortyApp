@@ -78,26 +78,9 @@ class MainActivity : AppCompatActivity() {
 
 
 /*
-    fun bindStatus() {
-        when (status) {
 
-            RickAndMortyStatus.LOADING -> {
-
-                Toast.makeText(this, "Cargando imágenes", Toast.LENGTH_SHORT).show()
-
-            }
-            RickAndMortyStatus.ERROR -> {
-
-                Toast.makeText(this, "Ha habido un problema, inténtelo de nuevo", Toast.LENGTH_SHORT).show()
-
-            }
-
-            RickAndMortyStatus.DONE -> {
                 binding.tv.text = item.name
                 Picasso.get().load(item.photo).into(binding.ivRickAndMorty)
-            }
-        }
 
-    }
 */
 }
