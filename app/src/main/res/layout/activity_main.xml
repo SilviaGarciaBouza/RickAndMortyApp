@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/l_l_recargar"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/t_v_recargar"
+            android:text="@string/ha_habido_un_problema_por_favor_int_ntelo_de_nuevo"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b_recargar"
+            android:text="@string/recargar"/>
+    </LinearLayout>
+
+
+
     <ProgressBar
         android:id="@+id/progress_bar"
         android:progressTint="#9C27B0"

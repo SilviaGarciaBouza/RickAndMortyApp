@@ -1,26 +1,15 @@
 package com.example.rickandmorty
 
-import android.app.ProgressDialog.show
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import com.example.rickandmorty.databinding.ActivityMainBinding
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-//import androidx.activity.viewModels
-import com.example.rickandmorty.RickAndMortyService
-import androidx.lifecycle.viewmodel.viewModelFactory
-
 import androidx.activity.viewModels
-import androidx.core.view.isGone
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
-import androidx.lifecycle.*
-import com.squareup.picasso.Picasso
-import okhttp3.internal.notify
-
+import androidx.lifecycle.viewModelScope
+import com.example.rickandmorty.RickAndMortyAdapter.RickAndMortyHolder
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,14 +55,19 @@ class MainActivity : AppCompatActivity() {
 }
     private fun load() {
         binding.progressBar.visibility = View.VISIBLE
+        binding.lLRecargar.visibility = View.GONE
     }
     private fun error(){
-        Toast.makeText(this, "Error, inténtalo de nuevo", Toast.LENGTH_SHORT).show()
+       // Toast.makeText(this, "Error, inténtalo de nuevo", Toast.LENGTH_SHORT).show()
         binding.progressBar.visibility = View.GONE
+        binding.lLRecargar.visibility = View.VISIBLE
+        val butonRecharge: Button = binding.bRecargar
+        butonRecharge.setOnClickListener{ viewModel.getCharacteres() }
     }
     private fun done() {
         ricAndMortyAdapter.listItemsRickAndMorty = viewModel.characteres.value!!
         binding.progressBar.visibility = View.GONE
         ricAndMortyAdapter.notifyDataSetChanged()
+        binding.lLRecargar.visibility = View.GONE
     }
 }

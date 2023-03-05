@@ -24,7 +24,7 @@ class RickAndMortyViewModel: ViewModel() {
             getCharacteres()
         }
 
-        private fun getCharacteres() {
+        fun getCharacteres() {
             viewModelScope.launch {
                 _status.value = RickAndMortyStatus.LOADING
                 try {
