@@ -7,8 +7,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 class RickAndMortyService {
-
-
     private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
@@ -21,7 +19,6 @@ class RickAndMortyService {
     }
     //service es el objeto de la interface
     val service = retrofit.create(RickAndMortyApiService::class.java)
-
 }
 
 
@@ -34,7 +31,7 @@ class RickAndMortyService {
 
 //objeto q vas a usar en otros archivos:
 //TODO
-val rickAndMortyService1 = RickAndMortyService().service
+//val rickAndMortyService1 = RickAndMortyService().service
 
 
 

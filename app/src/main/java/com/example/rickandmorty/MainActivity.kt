@@ -13,7 +13,8 @@ import com.example.rickandmorty.RickAndMortyAdapter.RickAndMortyHolder
 
 class MainActivity : AppCompatActivity() {
 
-    val viewModel: RickAndMortyViewModel by viewModels()
+
+    val viewModel: RickAndMortyViewModel = RickAndMortyViewModel(rickAndMortyApiService = RickAndMortyService().service)
     val ricAndMortyAdapter: RickAndMortyAdapter = RickAndMortyAdapter(emptyList())
 
     private lateinit var binding: ActivityMainBinding
