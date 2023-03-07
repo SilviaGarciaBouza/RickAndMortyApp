@@ -7,28 +7,74 @@ import io.mockk.coEvery
 import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.runTest
-import kotlinx.coroutines.test.setMain
+import kotlinx.coroutines.test.*
 import org.hamcrest.core.Every
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.junit.rules.TestWatcher
+import org.junit.runner.Description
+import java.util.EmptyStackException
+import kotlin.coroutines.EmptyCoroutineContext
+import kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.DeclaredMemberIndex.Empty
+
+
+/*
+class MainDispatcherRule(
+    val testDispatcher: TestDispatcher = UnconfinedTestDispatcher(),
+) : TestWatcher() {
+    override fun starting(description: Description) {
+        Dispatchers.setMain(testDispatcher)
+    }
+
+    override fun finished(description: Description) {
+        Dispatchers.resetMain()
+    }
+}
+
+class RickAndMortyViewModelTest {
+    @RelaxedMockK
+    lateinit var rickAndMortyApiService: RickAndMortyApiService
+    @get:Rule
+    val mainDispatcherRule = MainDispatcherRule()
+
+    @Test
+    fun whenSuccesfulThenStateIsDone() = runTest {
+
+        var listItem = listOf<ItemRickAndMorty>(
+            ItemRickAndMorty("https://rickandmortyapi.com/api/character/avatar/1.jpeg", "Rick Sanchez"),
+            ItemRickAndMorty("https://rickandmortyapi.com/api/character/avatar/2.jpeg\",\"episode\":[\"https://rickandmortyapi.com/api/episode/1\",\"https://rickandmortyapi.com/api/episode/2\",\"https://rickandmortyapi.com/api/e", "Morty Smith")
+        )
+       // coEvery { rickAndMortyApiService.getItems().results } returns listItem
+        MockKAnnotations.init(this)
+        println(rickAndMortyApiService)
+       // rickAndMortyApiService.getItems().results = listItem
+        val rickAndMortyViewModel = RickAndMortyViewModel(rickAndMortyApiService)
+        rickAndMortyViewModel.getCharacteres()
+        assertEquals(rickAndMortyViewModel.status.value, RickAndMortyStatus.DONE)
+    }
+}
+*/
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class RickAndMortyViewModelTest {
     //@ExperimentalCoroutinesApi
-    //Si es necesario mokear lo q hay en () en el ViewModel @RelaxedMockK
+    //Lo q vas a mokear, es decir, crear tu con tus datos. en el ViewModel @RelaxedMockK
     @RelaxedMockK
     private lateinit var rickAndMortyApiService: RickAndMortyApiService
 
     //Instanciar el ViewModel:
     private lateinit var rickAndMortyViewModel: RickAndMortyViewModel
 
+
+
     @get:Rule
     val rule:InstantTaskExecutorRule = InstantTaskExecutorRule()
+
+
+
     //Ejecutar antes de los tests:
    // @OptIn(ExperimentalCoroutinesApi::class)
     @Before
@@ -66,4 +112,6 @@ class RickAndMortyViewModelTest {
         //resetea al final
         Dispatchers.resetMain()
     }
+
+
 }

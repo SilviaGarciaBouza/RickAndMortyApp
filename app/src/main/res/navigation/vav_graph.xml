@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listChraracteresFragment">
+
+    <fragment
+        android:id="@+id/listChraracteresFragment"
+        android:name="com.example.rickandmorty.ListChraracteresFragment"
+        android:label="fragment_list_chraracteres"
+        tools:layout="@layout/fragment_list_chraracteres" >
+        <action
+            android:id="@+id/action_listChraracteresFragment_self"
+            app:destination="@id/listChraracteresFragment" />
+    </fragment>
+</navigation>

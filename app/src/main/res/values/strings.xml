@@ -3,4 +3,6 @@
     <string name="blue_shirt_morty">Blue Shirt Morty</string>
     <string name="recargar">Recargar</string>
     <string name="ha_habido_un_problema_por_favor_int_ntelo_de_nuevo">Ha habido un problema, por favor, inténtelo de nuevo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
